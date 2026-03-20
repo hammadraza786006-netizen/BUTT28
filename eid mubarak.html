@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eid Mubarak</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top, #0d0d0d, #1a1a2e);
+  height: 100vh;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+/* 🌙 Moon */
+.moon {
+  position: absolute;
+  top: 80px;
+  left: -100px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff;
+  animation: moveMoon 20s linear infinite;
+}
+
+@keyframes moveMoon {
+  from { left: -100px; }
+  to { left: 110%; }
+}
+
+/* ⭐ Real Stars */
+.star {
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  animation: floatUp 20 linear infinite;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+/* 💖 Hearts */
+.heart {
+  position: absolute;
+  color: #ff4d6d;
+  font-size: 16px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* 💻 Box */
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,204,0.4);
+  text-align: center;
+  color: #00ffcc;
+}
+
+/* ⌨ Typing */
+#typing {
+  font-size: 28px;
+  border-right: 2px solid #00ffcc;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(30) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+p {
+  margin-top: 15px;
+  color: #ccc;
+  font-size: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- 🌙 Moon -->
+<div class="moon"></div>
+
+<!-- ⭐ Stars Script -->
+<script>
+for(let i=0; i<100; i++){
+  let star = document.createElement("div");
+  star.className = "star";
+  star.innerHTML = "⭐";
+  star.style.left = Math.random()*100 + "vw";
+  star.style.top = Math.random()*100 + "vh";
+  document.body.appendChild(star);
+}
+</script>
+
+<!-- 💖 Hearts Script -->
+<script>
+for(let i=0; i<50; i++){
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤";
+  heart.style.left = Math.random()*100 + "vw";
+  heart.style.animationDuration = (Math.random()*3 + 3) + "s";
+  document.body.appendChild(heart);
+}
+</script>
+
+<!-- 💻 Content -->
+<div class="box">
+  <div id="typing">Eid Mubarak  "MY DEAR Borther"</div>
+  <p>May your life always compile successfully, your bugs stay zero, and happiness 💖</p>
+</div>
+
+</body>
+</html>
